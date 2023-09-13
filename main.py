@@ -1,5 +1,6 @@
 from manage_morse import convert_string_to_morse
-
+import sound
 clear_input = input("Bitte geben Sie hier ihren Text ein:")
 
-print(convert_string_to_morse(clear_input))
+morse_string = convert_string_to_morse(clear_input)
+sound.play_sound(morse_string)
