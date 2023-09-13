@@ -18,6 +18,7 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 def convert_string_to_morse(input_string:str) ->str:
     morse_string  = ""
     for letter in input_string:
-        morse_string += MORSE_CODE_DICT.get(letter.upper()) + " "
+        if letter != " ":
+            morse_string += MORSE_CODE_DICT.get(letter.upper()) + " "
     return morse_string
 
