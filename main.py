@@ -6,10 +6,11 @@ import argparse
 def main ():
     parser = argparse.ArgumentParser(description='Python Converter to Morse')
     parser.add_argument('--string', type=str,required=True , help='The input String which should be converted.')
-    parser.add_argument('--export_file', type=bool, default=True, help='Export the Morse Code as a MP3 File.')
-    parser.add_argument('--play_sound', type=bool, default=True, help='Play the morse code at the computer.') 
+    parser.add_argument('--export_file',action=argparse.BooleanOptionalAction, default=True , help='Export the Morse Code as a MP3 File.')
+    parser.add_argument('--play_sound', action=argparse.BooleanOptionalAction, default=True, help='Play the morse code at the computer.') 
 
     args = parser.parse_args()
+    print(args.play_sound)
 
     morse_string = convert_string_to_morse(args.string)
     if(args.play_sound):
